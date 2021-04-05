@@ -1,0 +1,32 @@
+@import '../../../node_modules/include-media/dist/include-media';
+
+$breakpoints: (phone: 320px, 
+               tablet: 768px, 
+               desktop: 1024px) !default;
+
+@include media(">phone", "<tablet") {
+    .hide-xs {
+        display: none;
+    }
+    
+    .header-car {
+        width: 320px;
+        height: 220px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+
+        &::before,&::after {
+            content: '';
+            background-color: $base-color;
+            height: 0.1rem;
+            margin: .5rem;
+            width: 0rem;
+        }
+    }
+
+    .wrap-sendbtn {
+        justify-content: center !important;
+    }
+}
